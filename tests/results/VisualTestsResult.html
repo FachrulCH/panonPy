@@ -1,0 +1,74 @@
+<html><head><title>PanonPy Visual Test Report</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; }
+                        table { width: 100%; border-collapse: collapse; }
+                        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+                        tr.equal { background-color: #d4edda; }
+                        tr.diff { background-color: #f8d7da; }
+                        tr.baseline { background-color: #fff3cd; }
+                        img { max-width: 200px; cursor: pointer; transition: 0.3s; }
+                        img:hover { opacity: 0.7; }
+                        /* The Modal (background) */
+                        .modal {
+                            display: none;
+                            position: fixed;
+                            z-index: 1;
+                            padding-top: 60px;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: auto;
+                            background-color: rgba(0,0,0,0.9);
+                        }
+                        /* Modal Content (Image) */
+                        .modal-content {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                        }
+                        /* Close Button */
+                        .close {
+                            position: absolute;
+                            top: 15px;
+                            right: 35px;
+                            color: #f1f1f1;
+                            font-size: 40px;
+                            font-weight: bold;
+                            transition: 0.3s;
+                        }
+                        .close:hover,
+                        .close:focus {
+                            color: #bbb;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                    </style>
+                    </head><body>
+                    <h1>PanonPy Visual Test Report</h1>
+                    <p><b>Execution date:</b> 04/04/2025 18:17:53</p>
+                    <table>
+                    <thead><tr><th>Test</th><th>Baseline</th><th>Actual</th><th>Diff</th><th>Result</th></tr></thead>
+                    <tbody><tr class="diff"><td>pertamax_test</td><td><img src="pertamax_test_baseline.png" onclick="openModal(this.src)" /></td><td><img src="pertamax_test_actual.png" onclick="openModal(this.src)" /></td><td><img src="pertamax_test_diff.png" onclick="openModal(this.src)" /></td><td>Different (diff 0.011953)</td></tr></tbody>
+                    </table>
+
+                    <!-- The Modal -->
+                    <div id="imgModal" class="modal">
+                      <span class="close" onclick="closeModal()">&times;</span>
+                      <img class="modal-content" id="modalImage">
+                    </div>
+
+                    <script>
+                    function openModal(src) {
+                        var modal = document.getElementById("imgModal");
+                        var modalImg = document.getElementById("modalImage");
+                        modal.style.display = "block";
+                        modalImg.src = src;
+                    }
+                    function closeModal() {
+                        var modal = document.getElementById("imgModal");
+                        modal.style.display = "none";
+                    }
+                    </script>
+                    </body></html>
