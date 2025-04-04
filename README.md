@@ -31,6 +31,15 @@ tester.compare(
 )
 ```
 
+### Install Development
+Make sure you have Poetry installed.
+Clone the repository:
+```bash
+git clone https://github.com/FachrulCH/panonPy.git
+cd panonpy
+poetry install --with test
+```
+
 ### Result
 - Copies actual, baseline, and diff images into output_dir (default: 'results')
 - Generates a VisualTestsResult.html report with:

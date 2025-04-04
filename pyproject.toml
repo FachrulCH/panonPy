@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "panonpy"
-version = "1.0.0"
+version = "1.1.0"
 description = "A simple image comparer"
 authors = ["fachrulch <fachrul.fch@gmail.com>"]
 license = "Apache v2.0"

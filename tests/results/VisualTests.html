@@ -1,0 +1,43 @@
+<html><head><title>PanonPy Visual Test Report</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            table { width: 100%; border-collapse: collapse; }
+                            th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+                            tr.equal { background-color: #d4edda; }
+                            tr.diff { background-color: #f8d7da; }
+                            tr.baseline { background-color: #fff3cd; }
+                            img { max-width: 200px; cursor: pointer; transition: 0.3s; }
+                            img:hover { opacity: 0.7; }
+                            .modal { display: none; position: fixed; z-index: 1; padding-top: 60px; left: 0; top: 0;
+                                      width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+                            .modal-content { margin: auto; display: block; width: 80%; max-width: 700px; }
+                            .close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; 
+                                      font-weight: bold; transition: 0.3s; }
+                            .close:hover, .close:focus { color: #bbb; text-decoration: none; cursor: pointer; }
+                        </style>
+                        </head><body>
+                        <h1>PanonPy Visual Test Report</h1>
+                        <p><b>Execution date:</b> 05/04/2025 06:42:46</p>
+                        <table>
+                        <thead><tr><th>Test</th><th>Baseline</th><th>Actual</th><th>Diff</th><th>Result</th></tr></thead>
+                        <tbody><tr class="diff"><td>different_test</td><td><img src="different_test_baseline.png" onclick="openModal(this.src)" /></td><td><img src="different_test_actual.png" onclick="openModal(this.src)" /></td><td><img src="different_test_diff.png" onclick="openModal(this.src)" /></td><td>Different (diff 1.20%)</td></tr><tr class="diff"><td>hard_fail_test</td><td><img src="hard_fail_test_baseline.png" onclick="openModal(this.src)" /></td><td><img src="hard_fail_test_actual.png" onclick="openModal(this.src)" /></td><td><img src="hard_fail_test_diff.png" onclick="openModal(this.src)" /></td><td>Different (diff 1.20%)</td></tr><tr class="equal"><td>identical_test</td><td><img src="identical_test_baseline.png" onclick="openModal(this.src)" /></td><td><img src="identical_test_actual.png" onclick="openModal(this.src)" /></td><td>-</td><td>Similar (diff 0.00%)</td></tr><tr class="diff"><td>different_img_type</td><td><img src="different_img_type_baseline.png" onclick="openModal(this.src)" /></td><td><img src="different_img_type_actual.png" onclick="openModal(this.src)" /></td><td><img src="different_img_type_diff.png" onclick="openModal(this.src)" /></td><td>Different (diff 4.60%)</td></tr><tr class="diff"><td>different_img_size</td><td><img src="different_img_size_baseline.png" onclick="openModal(this.src)" /></td><td><img src="different_img_size_actual.png" onclick="openModal(this.src)" /></td><td>-</td><td>Error: Image sizes do not match: actual (3840, 1847) vs baseline (5999, 2886)</td></tr></tbody>
+                        </table>
+
+                        <div id="imgModal" class="modal">
+                          <span class="close" onclick="closeModal()">&times;</span>
+                          <img class="modal-content" id="modalImage">
+                        </div>
+
+                        <script>
+                        function openModal(src) {
+                            var modal = document.getElementById("imgModal");
+                            var modalImg = document.getElementById("modalImage");
+                            modal.style.display = "block";
+                            modalImg.src = src;
+                        }
+                        function closeModal() {
+                            var modal = document.getElementById("imgModal");
+                            modal.style.display = "none";
+                        }
+                        </script>
+                        </body></html>

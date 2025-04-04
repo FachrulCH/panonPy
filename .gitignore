@@ -1,3 +1,7 @@
 .idea
 **/*.pyc
 __pycache__/
+reports/
+builds/
+dist/
+**/.DS_Store
