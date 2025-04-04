@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "panonpy"
+version = "0.1.0"
+description = "A simple image comparer"
+authors = ["fachrulch <fachrul.fch@gmail.com>"]
+license = "Apache v2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pillow = "^11.1.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
