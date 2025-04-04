@@ -5,9 +5,10 @@ import datetime
 
 
 class PanonPy:
-    def __init__(self, output_dir='visual_output', report_name='VisualTestsResult.html'):
+    def __init__(self, output_dir='visual_output', report_name='VisualTestsResult.html', fail=False):
         self.output_dir = output_dir
         self.report_name = report_name
+        self.fail = fail
         self.results = {'equal': 0, 'diff': 0, 'baseline': 0}
 
         os.makedirs(self.output_dir, exist_ok=True)
@@ -64,6 +65,10 @@ class PanonPy:
 
             self._add_result_to_report(result, test_name, output_actual_path, output_baseline_path, diff_img, message)
             print(f"Comparison result for {test_name}: {message}")
+            # Fail behavior
+            if result == 'diff' and self.fail:
+                raise AssertionError(f"Image comparison failed for {test_name}: {message}")
+
             return result
 
     def _save_differences_image(self, img1, img2, diff_path):

@@ -10,3 +10,13 @@ def test_simple_test():
         test_name='pertamax_test',
         threshold=0.01
     )
+
+def test_keduax():
+    tester = PanonPy(output_dir='results')
+
+    tester.compare_images(
+        actual_image_path='/Users/fachrulch/py/panonpy/tests/resources/baseline.png',
+        baseline_image_path='/Users/fachrulch/py/panonpy/tests/resources/baseline.png',
+        test_name='keduax_test',
+        threshold=0.01
+    )
